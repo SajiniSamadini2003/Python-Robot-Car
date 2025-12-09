@@ -2,8 +2,8 @@
 A fully functional Python-controlled robot car for REXTRO exhibition.
 
 ## Team Members
-| Name    | Role          | Contribution |
-|------   |------         |--------------|
+| Name            | Role               | Contribution |
+|------           |------              |--------------|
 | Ramitha | Documentation | README, diagrams |
 | Praveen | Documentation | README, diagrams |
 | Sajini  | Documentation | README, diagrams |
@@ -37,16 +37,65 @@ A fully functional Python-controlled robot car for REXTRO exhibition.
 
 
 
+ ## 10. How the Robot Car Works
 
-  Movement Logic
-	•	Forward = both motors forward
-	•	Backward = both reverse
-	•	Turn Left = right motor only
-	•	Turn Right = left motor only
+The robot car operates using Python code to control motors, sensors, and communication modules.  
+Here is a breakdown of the working process:
 
+---
 
-Control Logic
-WiFi/Bluetooth/keyboard 
+### 10.1 Movement Logic
+The car moves by controlling two DC motors through an L298N motor driver:
+
+- *Forward:* Both left and right motors spin forward.
+- *Backward:* Both left and right motors spin backward.
+- *Turn Left:* Right motor spins, left motor stops.
+- *Turn Right:* Left motor spins, right motor stops.
+- *Stop:* Both motors stop.
+
+---
+
+### 10.2 Obstacle Detection (Using Ultrasonic Sensor)
+The ultrasonic sensor continuously measures distance:
+
+1. Send a trigger pulse  
+2. Receive echo time  
+3. Convert echo time → distance  
+4. If *distance < safety limit (e.g., 10 cm):*  
+   - Car stops  
+   - Turns left or right  
+   - Continues forward when area is clear
+
+---
+
+### 10.3 Control Methods
+Depending on your design, the robot can be controlled using:
+
+- *WiFi:* The car hosts a small web server; user controls via phone or laptop.
+- *Bluetooth:* Commands sent from a mobile app.
+- *Keyboard (PC):* Python script listens for key presses.
+- *MQTT:* Cloud or WiFi-based IoT control.
+---
+
+### 10.4 Python Code Execution Flow
+The normal flow of the Python program is:
+
+1. Initialize GPIO pins  
+2. Load motor & sensor modules  
+3. Start control loop  
+4. Read sensor values  
+5. Decide movement  
+6. Execute motor command  
+7. Repeat the loop continuously  
+
+---
+
+### 10.5 Power System
+- Motors powered by 6–12V battery pack  
+- Microcontroller powered by 5V  
+- Common ground shared between battery + board  
+
+---
 
 ## code
 #include "BluetoothSerial.h" 
