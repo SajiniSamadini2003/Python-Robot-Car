@@ -1,5 +1,5 @@
 # Python-Robot-Car
-A fully functional Python-controlled robot car for our REXTRO exhibition.\
+A fully functional Python-controlled robot car for REXTRO exhibition.
 
 ## Team Members
 | Name    | Role          | Contribution |
@@ -29,17 +29,11 @@ A fully functional Python-controlled robot car for our REXTRO exhibition.\
 - GPIO libraries
 - WiFi/Bluetooth control software
 
-## Folder Structure
-/python-robot-car
-│ main.py
-│ motor.py
-│ sensor.py
-│ controller.py
-│ README.md
-└── /docs
-    └── wiring.png
+
 
 ## circuit diagram photos
+<img width="194" height="260" alt="image" src="https://github.com/user-attachments/assets/2df807d7-faef-4729-84be-1ffe474d95c0" />
+
 
 
 
