@@ -55,19 +55,6 @@ The car moves by controlling two DC motors through an L298N motor driver:
 
 ---
 
-### 10.2 Obstacle Detection (Using Ultrasonic Sensor)
-The ultrasonic sensor continuously measures distance:
-
-1. Send a trigger pulse  
-2. Receive echo time  
-3. Convert echo time → distance  
-4. If *distance < safety limit (e.g., 10 cm):*  
-   - Car stops  
-   - Turns left or right  
-   - Continues forward when area is clear
-
----
-
 ### 10.3 Control Methods
 Depending on your design, the robot can be controlled using:
 
